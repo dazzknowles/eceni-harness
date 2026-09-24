@@ -1,0 +1,288 @@
+{
+  "schema_version": "eceni-harness.work-definition/1",
+  "id": "solar-optimiser-issue-5-preflight-1",
+  "purpose": "Validate the bounded authority and evidence contract for eventual implementation of Solar Optimiser issue #5 without implementing or changing Solar in this run.",
+  "target": {
+    "repository": "https://github.com/dazzknowles/solar-optimiser",
+    "ref": "81fa22b99e2ff01cbaa7e61266a90edbdf4024d5",
+    "work_item": {
+      "id": "solar-optimiser#5",
+      "url": "https://github.com/dazzknowles/solar-optimiser/issues/5"
+    }
+  },
+  "authoritative_inputs": [
+    {
+      "role": "governance-baseline",
+      "url": "https://github.com/dazzknowles/eceni-governance",
+      "revision_kind": "git-commit",
+      "revision": "90e8b0a7e051df4e40e058223c7d3aad6b88c166"
+    },
+    {
+      "role": "project-applicability",
+      "url": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/governance.md",
+      "revision_kind": "git-commit",
+      "revision": "81fa22b99e2ff01cbaa7e61266a90edbdf4024d5"
+    },
+    {
+      "role": "product-decision",
+      "url": "https://github.com/dazzknowles/solar-optimiser/issues/5#issuecomment-5818532133",
+      "revision_kind": "provider-id",
+      "revision": "issuecomment-5818532133"
+    },
+    {
+      "role": "functional-specification",
+      "url": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/solar-functional-specification.md",
+      "revision_kind": "git-commit",
+      "revision": "81fa22b99e2ff01cbaa7e61266a90edbdf4024d5"
+    },
+    {
+      "role": "technical-specification",
+      "url": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/solar-technical-specification.md",
+      "revision_kind": "git-commit",
+      "revision": "81fa22b99e2ff01cbaa7e61266a90edbdf4024d5"
+    }
+  ],
+  "governance": {
+    "baseline": {
+      "version": "1.1.0",
+      "repository": "https://github.com/dazzknowles/eceni-governance",
+      "commit": "90e8b0a7e051df4e40e058223c7d3aad6b88c166"
+    },
+    "applicability_record": {
+      "url": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/governance.md",
+      "revision": "81fa22b99e2ff01cbaa7e61266a90edbdf4024d5"
+    }
+  },
+  "authority": {
+    "grants": [
+      {
+        "id": "GRANT-READ-SOLAR",
+        "repository": "https://github.com/dazzknowles/solar-optimiser",
+        "capability": "repository.read",
+        "scope": "Inspect the pinned target, issue #5, merged decision, governance adoption, and specifications for Harness preflight only.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      },
+      {
+        "id": "GRANT-READ-GOVERNANCE",
+        "repository": "https://github.com/dazzknowles/eceni-governance",
+        "capability": "repository.read",
+        "scope": "Consume Governance baseline 1.1.0 as authoritative reference material.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      },
+      {
+        "id": "GRANT-READ-ISSUE",
+        "repository": "https://github.com/dazzknowles/solar-optimiser",
+        "capability": "issue.read",
+        "scope": "Read the live issue #5 decision context.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      }
+    ],
+    "prohibitions": [
+      {
+        "id": "PROHIBIT-SOLAR-WRITE",
+        "repository": "https://github.com/dazzknowles/solar-optimiser",
+        "capability": "repository.write",
+        "scope": "Do not implement, edit, commit, or push Solar feature changes in this Harness bootstrap run.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      },
+      {
+        "id": "PROHIBIT-GOVERNANCE-WRITE",
+        "repository": "https://github.com/dazzknowles/eceni-governance",
+        "capability": "repository.write",
+        "scope": "Do not copy, redefine, or edit authoritative Governance.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      },
+      {
+        "id": "PROHIBIT-MERGE",
+        "repository": "https://github.com/dazzknowles/solar-optimiser",
+        "capability": "pull_request.merge",
+        "scope": "Do not merge any Solar pull request.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      },
+      {
+        "id": "PROHIBIT-DEPLOY",
+        "repository": "https://github.com/dazzknowles/solar-optimiser",
+        "capability": "release.deploy",
+        "scope": "Do not deploy or release Solar.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      },
+      {
+        "id": "PROHIBIT-CONTROL",
+        "repository": "https://github.com/dazzknowles/solar-optimiser",
+        "capability": "provider.control",
+        "scope": "Do not call FoxESS control operations or use live credentials.",
+        "source": "codex-task:01a0ced1-dc8c-7fe2-8c2c-502f543f911e"
+      }
+    ]
+  },
+  "execution": {
+    "change_repositories": [],
+    "reference_only_repositories": [
+      "https://github.com/dazzknowles/solar-optimiser",
+      "https://github.com/dazzknowles/eceni-governance"
+    ]
+  },
+  "acceptance": {
+    "implementer_role": "future Solar issue #5 implementer",
+    "criteria": [
+      {
+        "id": "SOL5-AC-BOUNDARY",
+        "criterion": "Zero, one, and many discovered sites; empty, single, and multiple approval subsets; new, disappearing, and revoked sites; duplicate IDs; pagination; one inventory call; and legacy migration behave exactly as SOL-T-204 through SOL-T-210 require.",
+        "evidence_required": [
+          "Fixture and integration results traced to each SOL-T-1406 scenario",
+          "Implementation evidence identifying the exact assessed Solar commit"
+        ],
+        "assessor": "Solar acceptance authority",
+        "independent_verification_required": true
+      },
+      {
+        "id": "SOL5-AC-DATA",
+        "criterion": "No non-approved site or device data reaches telemetry calls, operational writes, evidence files, routine logs, alerts, or diagnostics beyond justified candidate metadata.",
+        "evidence_required": [
+          "Independently derived negative-path tests for every prohibited sink",
+          "Review evidence for the approved metadata reduction boundary"
+        ],
+        "assessor": "Solar acceptance authority",
+        "independent_verification_required": true
+      },
+      {
+        "id": "SOL5-AC-CREDENTIAL",
+        "criterion": "Credential replacement or expanded visibility fails closed unless a stable identity and explicit migration rule are evidenced.",
+        "evidence_required": [
+          "Credential replacement and newly visible site test results",
+          "Decision evidence for any future stable-identity migration rule"
+        ],
+        "assessor": "Solar acceptance authority",
+        "independent_verification_required": true
+      },
+      {
+        "id": "SOL5-AC-EVIDENCE",
+        "criterion": "Every issue #5 criterion receives an EVI-001 result with supporting evidence and assessor provenance; unexercised live behaviour remains unverified.",
+        "evidence_required": [
+          "Per-criterion result classification and evidence references",
+          "Independent verifier provenance",
+          "Explicit unverified classifications for unexercised live behaviour"
+        ],
+        "assessor": "Solar acceptance authority",
+        "independent_verification_required": true
+      }
+    ],
+    "independent_verification": {
+      "required": true,
+      "verifier_role": "independent Solar issue #5 verifier",
+      "derived_from": [
+        "SOL-F-105 through SOL-F-108",
+        "SOL-F-207",
+        "SOL-F-804 through SOL-F-805",
+        "SOL-T-204 through SOL-T-210",
+        "SOL-T-1406 through SOL-T-1407",
+        "Eceni Governance VER-001 at 90e8b0a7e051df4e40e058223c7d3aad6b88c166"
+      ],
+      "provenance_required": true
+    }
+  },
+  "obligations": {
+    "decisions": [
+      {
+        "id": "SOL5-DEC-COLLECTION-BOUNDARY",
+        "summary": "Account inventory discovery is bounded onboarding; telemetry collection requires explicit site approval and empty approval collects nothing.",
+        "authority": "Solar product owner, Dazz Knowles",
+        "basis": "Least-capability, purpose-bound data, and installer or delegated keys that may expose multiple customers.",
+        "source": "https://github.com/dazzknowles/solar-optimiser/issues/5#issuecomment-5818532133",
+        "reassessment_triggers": [
+          "Material change to FoxESS account or credential scoping capabilities",
+          "Material change to Solar tenancy, installer, or fleet-administration requirements"
+        ]
+      },
+      {
+        "id": "SOL5-DEC-GOVERNANCE-ADOPTION",
+        "summary": "Solar adopts Eceni Governance baseline 1.1.0 while retaining issue #5 as an outstanding implementation obligation.",
+        "authority": "Solar governance adoption decision in merged PR #8",
+        "basis": "Solar records baseline lineage and project applicability without claiming blanket conformance.",
+        "source": "https://github.com/dazzknowles/solar-optimiser/pull/8",
+        "reassessment_triggers": [
+          "Solar adopts a later Eceni Governance baseline",
+          "Issue #5 is satisfied or explicitly superseded"
+        ]
+      }
+    ],
+    "deferrals": [
+      {
+        "id": "SOL5-DEF-LIVE-VERIFICATION",
+        "summary": "Live FoxESS end-to-end behaviour is verified during implementation rather than on every CI run.",
+        "affected_source": "SOL-T-1407 and Solar r04a/r04b",
+        "rationale": "Live verification is quota-consuming and implementation or operation is the proportionate evidence-producing mechanism.",
+        "owner": "Solar issue #5 implementation owner",
+        "status": "open",
+        "trigger": "An issue #5 implementation is available against an authorised real FoxESS connection.",
+        "acceptance_conditions": [
+          "Live behaviour is assessed and classified under EVI-001",
+          "Unexercised behaviour remains unverified rather than Pass",
+          "Contrary findings return to Solar specification or design authority"
+        ],
+        "may_proceed": "Fixture and integration implementation and independently derived CI-gating verification may proceed once separately authorised.",
+        "may_not_proceed": "Verified acceptance of unexercised live behaviour and production release claims may not proceed on fixture evidence alone.",
+        "source": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/solar-technical-specification.md"
+      }
+    ],
+    "follow_ups": [
+      {
+        "id": "SOL5-FU-AUTHORITY",
+        "summary": "Obtain and cite explicit authority before implementing or changing Solar issue #5.",
+        "owner": "Solar product owner",
+        "status": "open",
+        "trigger": "Before any issue #5 implementation write or execution run.",
+        "acceptance_conditions": [
+          "A durable implementation grant identifies repository, scope, prohibitions, and decision authority",
+          "A new work-definition revision removes no prohibition without citing that grant"
+        ],
+        "source": "https://github.com/dazzknowles/solar-optimiser/issues/5#issuecomment-5818532133"
+      },
+      {
+        "id": "SOL5-FU-PENDING-METADATA",
+        "summary": "Decide pending-site metadata storage, retention, and deletion behaviour.",
+        "owner": "Solar design authority",
+        "status": "open",
+        "trigger": "Issue #5 implementation design before candidate metadata is durably retained.",
+        "acceptance_conditions": [
+          "The minimum metadata set, location, retention, deletion, and recovery behaviour are recorded and reviewed"
+        ],
+        "source": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/solar-technical-specification.md"
+      },
+      {
+        "id": "SOL5-FU-APPROVAL-MECHANISM",
+        "summary": "Choose the Phase 1 approval mechanism and record actor identity evidence.",
+        "owner": "Solar design authority",
+        "status": "open",
+        "trigger": "Issue #5 implementation design before approvals can be created or changed.",
+        "acceptance_conditions": [
+          "The mechanism satisfies SOL-T-204 through SOL-T-210",
+          "The accountable approval actor and audit identity are explicit"
+        ],
+        "source": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/solar-technical-specification.md"
+      },
+      {
+        "id": "SOL5-FU-CONNECTION-IDENTITY",
+        "summary": "Evidence and design a stable FoxESS connection identity or retain fail-closed credential replacement.",
+        "owner": "Solar design authority",
+        "status": "open",
+        "trigger": "Before any approval migration across credential replacement is implemented.",
+        "acceptance_conditions": [
+          "Stable identity evidence and an explicit migration rule are approved, or replacement remains fail-closed"
+        ],
+        "source": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/solar-technical-specification.md"
+      },
+      {
+        "id": "SOL5-FU-INVENTORY-ENDPOINT",
+        "summary": "Choose the minimum FoxESS inventory call set needed for approved onboarding and status behaviour.",
+        "owner": "Solar design authority",
+        "status": "open",
+        "trigger": "Issue #5 implementation design before provider inventory calls are fixed.",
+        "acceptance_conditions": [
+          "The call set satisfies UX, status, pagination, quota, and data-minimisation requirements without unnecessary retained data"
+        ],
+        "source": "https://github.com/dazzknowles/solar-optimiser/blob/81fa22b99e2ff01cbaa7e61266a90edbdf4024d5/docs/solar-technical-specification.md"
+      }
+    ]
+  }
+}
