@@ -6,9 +6,9 @@ The first Harness slice answers one question before execution: **is this work
 definition complete and internally consistent enough to act on without
 inventing authority or evidence?**
 
-The command validates a plain JSON file and writes a human-readable Markdown
-run record. It does not clone repositories, execute agents, edit products,
-interpret Governance, accept a product result, or publish anything.
+The .NET 10 command validates a plain JSON file and writes a human-readable
+Markdown run record. It does not clone repositories, execute agents, edit
+products, interpret Governance, accept a product result, or publish anything.
 
 ## Required content
 

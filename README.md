@@ -12,13 +12,16 @@ current Harness lineage and applicability decision are recorded in
 
 ## Try the Solar Optimiser issue #5 proving workload
 
-From a checkout of this repository:
+The maintained baseline is the .NET 10 SDK pinned by `global.json`; the
+implementation has no third-party runtime or package dependencies. From a
+checkout of this repository:
 
 ```powershell
-$env:PYTHONPATH = 'src'
-python -m unittest discover -s tests -v
-python harness.py validate data/work-definitions/solar-optimiser-5.json `
-  --record runs/solar-optimiser-5.md
+dotnet build Eceni.Harness.slnx
+dotnet run --project tests/Eceni.Harness.Tests
+dotnet run --project src/Eceni.Harness -- validate `
+  data/work-definitions/solar-optimiser-5.json `
+  --record runs/solar-optimiser-5-dotnet-1.md
 ```
 
 The example is a **read-only preflight**, not authority to implement Solar

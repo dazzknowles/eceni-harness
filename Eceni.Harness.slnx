@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/Eceni.Harness/Eceni.Harness.csproj" />
+  <Project Path="tests/Eceni.Harness.Tests/Eceni.Harness.Tests.csproj" />
+</Solution>
